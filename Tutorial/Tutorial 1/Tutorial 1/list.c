@@ -112,7 +112,7 @@ List reverse (List *self) {
 List merge(List *f_list, List *s_list) {
     // time : O(a+b) space: O(1)
     List result;
-    result.head = malloc(sizeof(ListNodePtr));
+    result.head = malloc(sizeof(ListNodePtr)); // fake vertex
     ListNodePtr a = f_list->head;
     ListNodePtr b = s_list->head;
     ListNodePtr temp = result.head;

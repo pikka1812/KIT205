@@ -84,13 +84,13 @@ int main(int argc, const char * argv[]) {
     //print_list(&reverse_list);
     //print_list(&my_list);
     
-    insert_in_order(&s_list, 2);
-    insert_in_order(&s_list, 3);
-    insert_in_order(&s_list, 8);
-    insert_in_order(&s_list, 9);
-    print_list(&s_list);
+//    insert_in_order(&s_list, 2);
+//    insert_in_order(&s_list, 3);
+//    insert_in_order(&s_list, 8);
+//    insert_in_order(&s_list, 9);
+//    print_list(&s_list);
     
-    List merge_list = merge(&my_list, &s_list);
+    List merge_list = reverse(&my_list);
     print_list(&merge_list);
     return 0;
 }
