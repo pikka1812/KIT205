@@ -28,9 +28,9 @@
 		31DEA25727E2A5450046C873 /* assignment-1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "assignment-1"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31DEA25A27E2A5450046C873 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		31DEA26127E2A55F0046C873 /* list.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list.h; sourceTree = "<group>"; };
-		31DEA26227E2A5830046C873 /* bst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bst.h; sourceTree = SOURCE_ROOT; };
-		31DEA26327E2A8200046C873 /* bst.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bst.c; sourceTree = SOURCE_ROOT; };
-		31DEA26527E2A8460046C873 /* list.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = list.c; sourceTree = SOURCE_ROOT; };
+		31DEA26227E2A5830046C873 /* bst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = bst.h; path = "assignment-1/bst.h"; sourceTree = SOURCE_ROOT; };
+		31DEA26327E2A8200046C873 /* bst.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = bst.c; path = "assignment-1/bst.c"; sourceTree = SOURCE_ROOT; };
+		31DEA26527E2A8460046C873 /* list.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = list.c; path = "assignment-1/list.c"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
