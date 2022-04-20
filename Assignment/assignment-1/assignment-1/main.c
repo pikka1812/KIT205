@@ -14,29 +14,45 @@
 
 
 void option_add_unit(UnitList *self) {
-    String unit_code = malloc(sizeof(unit_code));
+    char buffer[100];
+    String unit_code;
+    
     printf("Enter the unit code: ");
-    scanf("%s", unit_code);
+    scanf("%s", buffer);
+    
+    unit_code = malloc(strlen(buffer) +1);
+    strcpy(unit_code, buffer);
     
     insert_unit(self, unit_code);
+    free(unit_code);
 }
 
 void option_remove_unit(UnitList *self) {
-    String unit_code = malloc(sizeof(unit_code));
+    char buffer[100];
+    String unit_code;
+    
     printf("Enter the unit code: ");
-    scanf("%s", unit_code);
+    scanf("%s", buffer);
+    
+    unit_code = malloc(strlen(buffer) +1);
+    strcpy(unit_code, buffer);
     
     delete_unit(self, unit_code);
+    free(unit_code);
 }
 
 void option_enrol_student(UnitList *self, bool avl) {
     long student_id;
-    String unit_code = malloc(sizeof(unit_code));
+    char buffer[100];
+    String unit_code;
     
     printf("Enter the student id: ");
     scanf("%ld", &student_id);
     printf("Enter the unit code: ");
-    scanf("%s", unit_code);
+    scanf("%s", buffer);
+    
+    unit_code = malloc(strlen(buffer) +1);
+    strcpy(unit_code, buffer);
     
     ListNodePtr current = self->head;
     
@@ -45,27 +61,37 @@ void option_enrol_student(UnitList *self, bool avl) {
     }
     
     if(current != NULL) {
-        insert_student(&current->students, student_id, avl);
+        if (avl) insert_student_avl(&current->students, student_id);
+        else insert_student_bst(&current->students, student_id);
     }
+    
+    free(unit_code);
 }
 
 void option_unenrol_student(UnitList *self, bool avl) {
     long student_id;
-    String unit_code = malloc(sizeof(unit_code));
+    char buffer[100];
+    String unit_code;
     ListNodePtr current = self->head;
     
     printf("Enter the student id: ");
     scanf("%ld", &student_id);
     printf("Enter the unit code: ");
-    scanf("%s", unit_code);
+    scanf("%s", buffer);
+    
+    unit_code = malloc(strlen(buffer) +1);
+    strcpy(unit_code, buffer);
     
     while(current != NULL && strcmp(current->unit_code, unit_code) != 0) {
         current = current->next;
     }
     
     if(current != NULL) {
-        delete_student(&current->students, student_id, avl);
+        if (avl) delete_student_avl(&current->students, student_id);
+        else delete_student_bst(&current->students, student_id);
     }
+    
+    free(unit_code);
 }
 
 void option_print_all_units(UnitList *self) {
@@ -80,10 +106,14 @@ void option_print_all_units(UnitList *self) {
 
 void option_print_unit(UnitList *self) {
     ListNodePtr current = self->head;
-    String unit_code = malloc(sizeof(unit_code));
+    char buffer[100];
+    String unit_code;
     
     printf("Enter the unit code: ");
-    scanf("%s", unit_code);
+    scanf("%s", buffer);
+    
+    unit_code = malloc(strlen(buffer) +1);
+    strcpy(unit_code, buffer);
     
     while(current != NULL && strcmp(current->unit_code, unit_code) != 0) {
         current = current->next;
@@ -93,6 +123,8 @@ void option_print_unit(UnitList *self) {
         printf("List of students enrol in %s: \n" , unit_code);
         print_students(&current->students);
     }
+    
+    free(unit_code);
 }
 
 void option_print_student(UnitList *self) {
@@ -151,5 +183,4 @@ int main(int argc, const char * argv[]) {
         }
     }
     destroy_units_list(&units_list);
-    
 }

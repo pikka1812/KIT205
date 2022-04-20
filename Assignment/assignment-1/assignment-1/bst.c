@@ -52,13 +52,8 @@ BSTNodePtr insert_bst_node(BSTNodePtr self, long student_id) {
     return self;
 }
 
-void insert_student(StudentBST *self, long student_id, bool avl) {
-    if (avl) {
-        self->root = insert_avl_node(self->root, student_id);
-    }
-    else {
-        self->root = insert_bst_node(self->root, student_id);
-    }
+void insert_student_bst(StudentBST *self, long student_id) {
+    self->root = insert_bst_node(self->root, student_id);
 }
 
 BSTNodePtr delete_bst_node(BSTNodePtr self, long student_id) {
@@ -88,13 +83,8 @@ BSTNodePtr delete_bst_node(BSTNodePtr self, long student_id) {
 }
 
 
-void delete_student(StudentBST *self, long student_id, bool avl) {
-    if (avl) {
-        self->root = delete_avl_node(self->root, student_id);
-    }
-    else {
-        self->root = delete_bst_node(self->root, student_id);
-    }
+void delete_student_bst(StudentBST *self, long student_id) {
+    self->root = delete_bst_node(self->root, student_id);
 }
 
 void print_in_order_bst_node(BSTNodePtr self) {
@@ -182,6 +172,10 @@ BSTNodePtr right_rotate(BSTNodePtr a) {
     return b;
 }
 
+void insert_student_avl(StudentBST *self, long student_id) {
+    self->root = insert_avl_node(self->root, student_id);
+}
+
 BSTNodePtr insert_avl_node(BSTNodePtr self, long student_id) {
     if (self == NULL) {
         self = malloc(sizeof(*self));
@@ -215,6 +209,10 @@ BSTNodePtr insert_avl_node(BSTNodePtr self, long student_id) {
     }
     
     return self;
+}
+
+void delete_student_avl(StudentBST *self, long student_id) {
+    self->root = delete_avl_node(self->root, student_id);
 }
 
 BSTNodePtr delete_avl_node(BSTNodePtr self, long student_id) {
