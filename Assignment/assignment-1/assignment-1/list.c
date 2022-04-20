@@ -71,8 +71,8 @@ void destroy_units_list(UnitList *self) {
         current = current->next;
         
         
-        free_tree(&to_free->students);
-        free(&to_free->unit_code);
+        free_tree(&(to_free->students));
+        free(to_free->unit_code);
         free(to_free);
     }
     self->head = NULL;

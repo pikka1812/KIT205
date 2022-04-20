@@ -24,7 +24,6 @@ void option_add_unit(UnitList *self) {
     strcpy(unit_code, buffer);
     
     insert_unit(self, unit_code);
-    free(unit_code);
 }
 
 void option_remove_unit(UnitList *self) {
@@ -38,7 +37,6 @@ void option_remove_unit(UnitList *self) {
     strcpy(unit_code, buffer);
     
     delete_unit(self, unit_code);
-    free(unit_code);
 }
 
 void option_enrol_student(UnitList *self, bool avl) {
